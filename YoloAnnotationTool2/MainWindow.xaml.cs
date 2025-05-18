@@ -51,9 +51,6 @@ namespace YoloAnnotationTool
     /// </summary>
     public partial class MainWindow : Window
     {
-
-
-
         public MainViewModel ViewModel { get; set; }
         public MainWindow()
         {

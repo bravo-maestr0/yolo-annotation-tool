@@ -43,7 +43,6 @@
             <Setter Property="Foreground" Value="#333333"/>
         </Style>
 
-        <!-- Стиль текстових полів -->
         <Style TargetType="TextBox">
             <Setter Property="Padding" Value="0"/>
             <Setter Property="Margin" Value="0"/>
@@ -81,13 +80,14 @@
         </Style>
     </Window.Resources>
 
-    <Grid Margin="10" Background="Transparent">
+    <Grid Margin="10" Background="Transparent" ShowGridLines="true">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
@@ -103,19 +103,19 @@
         </Button>
 
 
-        <Label Grid.Column="0" Content="Annotation type:" Margin="76,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="17"/>
-        <Label Grid.Row="0" Grid.Column="0" Content="Project name:" Margin="611,-3,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="17" RenderTransformOrigin="0.213,0.647"/>
+        <Label Grid.Column="1" Content="Annotation type:" Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="17"/>
+        <Label Grid.Row="0" Grid.Column="0" Content="Project name:" Margin="120,-5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="17" RenderTransformOrigin="0.213,0.647"/>
 
         <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding TitleOfProject}" Name="inputTextBox" FontSize="20"
-                 HorizontalAlignment="Left" Margin="611,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" Height="30" />
+                 HorizontalAlignment="Left" Margin="120,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" Height="30" />
 
-        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Label  Content="The current project saving folder:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="15"/>
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Right">
+            <Label  Content="The current project saving folder:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="15"/>
             <Label Content="{Binding LabelText}"  HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="15"/>
         </StackPanel>
 
 
-        <StackPanel Orientation="Horizontal" Margin="216,13,0,7" Width="400" HorizontalAlignment="Left">
+        <StackPanel Orientation="Horizontal" Margin="160,13,0,7" Width="400" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1">
             <RadioButton Content="Detect" FontSize="15" 
                          Checked="Detect_Checked" IsChecked="{Binding IsOptionDetectChecked}"   
                          GroupName="Options" Margin="10,0,0,0" VerticalAlignment="Center" />
@@ -168,7 +168,7 @@
         </StackPanel>
 
 
-        <Border Grid.Column="0" Grid.Row="1" Margin="354,6,15,213"
+        <Border Grid.Column="1" Grid.Row="1" Margin="0,6,15,213"
         CornerRadius="10" BorderBrush="#FF007ACC" BorderThickness="2">
             <Grid>
                 <Image x:Name="Image1" Source="{Binding SelectedImagePath}" Stretch="Uniform" />
@@ -187,7 +187,7 @@
         </Border>
 
         <Label HorizontalAlignment="Left" Margin="387,20,0,0" Grid.Row="1" VerticalAlignment="Top" Content="{Binding SelectedImageName}"/>
-        <StackPanel Orientation="Vertical" Margin="819,0,0,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+        <StackPanel Orientation="Vertical" Margin="0,0,0,30" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal">
                 <Rectangle Width="20" Margin="0,0,10,0" Fill="{Binding CurrentLabelColor}"/>
                 <xctk:WatermarkTextBox Watermark="Enter the name of the class..." Width="200" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Name="NewClassTextBox" />
@@ -203,10 +203,10 @@
         </StackPanel>
 
 
-        <StackPanel Grid.Row="1" Grid.Column="0" Height="30" Width="auto"
-            VerticalAlignment="Bottom" Margin="354,0,0,178" HorizontalAlignment="Center"
+        <StackPanel Grid.Row="1" Grid.Column="1" Height="30" Width="auto"
+            VerticalAlignment="Bottom" Margin="0,0,0,175" HorizontalAlignment="Center"
             Orientation="Horizontal">
-            <TextBlock Text ="{Binding pointCounterText}" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Center" TextAlignment="Center"/>
+            <TextBlock Text ="{Binding pointCounterText}" VerticalAlignment="Center" Margin="0,0,0,0" HorizontalAlignment="Center" TextAlignment="Center"/>
         </StackPanel>
 
     </Grid>
